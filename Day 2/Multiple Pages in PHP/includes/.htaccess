@@ -1,0 +1,3 @@
+Require all denied
+
+<!-- Stops any request from web to the files in include folder in Apache server -->
