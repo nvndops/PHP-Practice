@@ -1,30 +1,23 @@
 <?php
 
-$db_host = "localhost";
-$db_name = "cms";
-$db_user = "cms_www";
-$db_pass = "_MfBWYl_Kpf3a3/K";
-
-$conn = mysqli_connect($db_host, $db_user,
-         $db_pass, $db_name);
-
-if (mysqli_connect_error()) {
-    echo mysqli_connect_error();
-    exit;
-}
-
-$sql = "SELECT *
-        FROM article
-        ORDER BY published_at;";
-
-$results = mysqli_query($conn, $sql);
-
-if ($results === false) {
-    echo mysqli_error($conn);
-} else {
-    $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-
-}
+$articles = [
+    [
+        "title" => "First Post",
+        "content" => "This is fist of many posts"
+    ],
+    [
+        "title" => "Second Post",
+        "content" => "This is Second of many posts"
+    ],
+    [
+        "title" => "Third Post",
+        "content" => "This is third of many posts"
+    ],
+    [
+        "title" => "Forth Post",
+        "content" => "This is forth of many posts"
+    ]
+];
 
 ?>
 
@@ -43,10 +36,6 @@ if ($results === false) {
     </header>
 
     <main>
-        <?php if (empty($articles)): ?>
-            <h3>No Articles found</h3>
-        <?php else: ?>
-
         <ul>
             <?php foreach ($articles as $article) : ?>
                 <li>
@@ -57,8 +46,6 @@ if ($results === false) {
                 </li>
             <?php endforeach; ?>
         </ul>
-
-        <?php endif; ?>
     </main>
 </body>
 

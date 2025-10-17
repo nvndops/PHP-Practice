@@ -1,0 +1,29 @@
+SELECT * FROM article;
+
+SELECT title FROM article;
+
+SELECT * FROM article WHERE id = 2;
+
+SELECT * FROM article WHERE title = 'Interesting Post';
+
+SELECT * FROM article WHERE title != 'Interesting Post';
+
+SELECT * FROM article WHERE title != 'Interesting Post' OR title = 'First Post';
+
+SELECT * FROM article WHERE title = 'Interesting Post' OR title = 'First Post';
+
+/* Querieing the table from the indexed data makes the searches faster */
+SELECT * FROM `article` WHERE title = 'Third Post'; 
+
+SELECT * FROM `article` ORDER BY title;
+SELECT * FROM `article` ORDER BY title DESC;
+
+SELECT * FROM `article` ORDER BY title, published_at;
+
+/* 
+To Connect database to php we needs 4 pieces of information- 
+    1- Host
+    2- Database Name
+    3- Username
+    4- Password
+*/
